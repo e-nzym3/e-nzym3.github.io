@@ -263,10 +263,10 @@ sudo nano /root/wlan1mon-on-boot.sh
 
 Paste the contents from the above link, **“SHIFT + CTRL + V”** is the shortcut.
 
-<div style="background-color:#F0C4B49C">
-    <p style="color: #7C572BF"><b style="color: #000000">IMPORTANT</b>: If your local Pi user is not <b style="color: #000000">war</b> (as it is in my case), you will need to modify the script slightly as it uses a logging function to give us visibility in case things break and wlan1mon is not created. I highlighted in the screenshot below the line where you need to change war to whatever your username is.</p>
+<div style="background-color:#F0C4B49C; padding: 5px; border-radius: 10px">
+    <p style="color: #000000"><b style="color: #000000">IMPORTANT</b>: If your local Pi user is not <b style="color: #000000">war</b> (as it is in my case), you will need to modify the script slightly as it uses a logging function to give us visibility in case things break and wlan1mon is not created. I highlighted in the screenshot below the line where you need to change war to whatever your username is.</p>
 </div>
-
+<br>
 <div style="text-align:center"><img src="img23.webp"></div>
 
 Then, just like before, press **“CTRL + O”** and then **“enter”** key to save. **“CTRL + X”** to exit. Before we move on, let’s make the file executable:
