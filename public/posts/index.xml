@@ -30,5 +30,17 @@
       
     </item>
     
+    <item>
+      <title>What&#39;s This All About?</title>
+      <link>http://localhost:1313/posts/intro/</link>
+      <pubDate>Tue, 30 Jul 2024 13:08:25 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/intro/</guid>
+      
+      <description>Intro I have always been interested in things… many things. My mind is a constant torrent of ideas, questions, “hmm” thoughts. These often lead me on multi-hour research journeys. While learning many things can often seem like a good thing, it only is if you remember what you learned 2 or 3 days later.
+Due to this, note taking has become a big part of my life, at least for the things I’m planning to remember days, months, or years later.</description>
+      
+    </item>
+    
   </channel>
 </rss>
