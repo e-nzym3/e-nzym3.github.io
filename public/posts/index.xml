@@ -6,27 +6,15 @@
     <description>Recent content in Posts on E-NZYM3 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 22 Jan 2025 09:05:38 -0500</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Aug 2024 13:08:25 -0500</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test_post2</title>
-      <link>http://localhost:1313/posts/test_post2/</link>
-      <pubDate>Wed, 22 Jan 2025 09:05:38 -0500</pubDate>
+      <title>WarDriver Pi - Build Guide</title>
+      <link>http://localhost:1313/posts/wardriver-pi_2024/</link>
+      <pubDate>Thu, 01 Aug 2024 13:08:25 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/test_post2/</guid>
+      <guid>http://localhost:1313/posts/wardriver-pi_2024/</guid>
       
-      <description>This is a test 2 </description>
-      
-    </item>
-    
-    <item>
-      <title>Test_post</title>
-      <link>http://localhost:1313/posts/test_post/</link>
-      <pubDate>Tue, 21 Jan 2025 10:37:06 -0500</pubDate>
-      
-      <guid>http://localhost:1313/posts/test_post/</guid>
-      
-      <description>Testing blog post This is a sample post
-# this is sample code import blahblah for i in meeps: print(i) Test picture</description>
+      <description>A Guide To Building Your Own WarDriving/WiFi Assessment Raspberry Pi As penetration testers, we often have to travel onsite to perform various engagements. I recently was tasked with performing a wireless assessment for a client, but realized I did not want to walk around the client’s site with a laptop in hand, as that is just plain cumbersome. As such, I decided to put on my thinking hat, dust off some of the Raspberry Pi 3’s that I had laying around , and turn them into something useful that may just solve my immediate issue.</description>
       
     </item>
     

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">WarDriver Pi - Build Guide | E-NZYM3 Blog</title>
+<meta property="og:title" content="WarDriver Pi - Build Guide | E-NZYM3 Blog" />
+<meta name="twitter:title" content="WarDriver Pi - Build Guide | E-NZYM3 Blog" />
+<meta itemprop="name" content="WarDriver Pi - Build Guide | E-NZYM3 Blog" />
+<meta name="application-name" content="WarDriver Pi - Build Guide | E-NZYM3 Blog" />
+<meta property="og:site_name" content="E-nzym3" />
+
+<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
+<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="http://localhost:1313/posts/wardriver-pi_2024/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-08-01T13:08:25-0500 />
+    <meta property="article:published_time" content=2024-08-01T13:08:25-0500 />
+    <meta property="og:url" content="http://localhost:1313/posts/wardriver-pi_2024/" />
+
+    
+    <meta property="og:article:author" content="Jack Pytel" />
+    <meta property="article:author" content="Jack Pytel" />
+    <meta name="author" content="Jack Pytel" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "WarDriver Pi - Build Guide",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-08-01",
+        "description": "",
+        "wordCount":  3294 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-08-01",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "E-NZYM3 Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.123.7">
+
+    
+    <meta property="og:title" content="WarDriver Pi - Build Guide" />
+<meta property="og:description" content="A Guide To Building Your Own WarDriving/WiFi Assessment Raspberry Pi As penetration testers, we often have to travel onsite to perform various engagements. I recently was tasked with performing a wireless assessment for a client, but realized I did not want to walk around the client’s site with a laptop in hand, as that is just plain cumbersome. As such, I decided to put on my thinking hat, dust off some of the Raspberry Pi 3’s that I had laying around , and turn them into something useful that may just solve my immediate issue." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/wardriver-pi_2024/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-08-01T13:08:25-05:00" />
+<meta property="article:modified_time" content="2024-08-01T13:08:25-05:00" />
+
+
+
+    
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="WarDriver Pi - Build Guide"/>
+<meta name="twitter:description" content="A Guide To Building Your Own WarDriving/WiFi Assessment Raspberry Pi As penetration testers, we often have to travel onsite to perform various engagements. I recently was tasked with performing a wireless assessment for a client, but realized I did not want to walk around the client’s site with a laptop in hand, as that is just plain cumbersome. As such, I decided to put on my thinking hat, dust off some of the Raspberry Pi 3’s that I had laying around , and turn them into something useful that may just solve my immediate issue."/>
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/wardriver-pi_2024/">
+    <link href="/style.min.11853a65c712c53bc35a0cbe994fcc1c688974209773c03c56caf25e138ea679.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">WarDriver Pi - Build Guide</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-08-01T13:08:25-05:00" itemprop="datePublished"> 1 Aug 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#raspberry-pi-os-installation">Raspberry Pi OS Installation</a></li>
+    <li><a href="#installing-software">Installing Software</a></li>
+    <li><a href="#configuring-the-pi">Configuring The Pi</a>
+      <ul>
+        <li><a href="#raspap">RaspAP</a></li>
+        <li><a href="#kismet">Kismet</a></li>
+        <li><a href="#wlan1-monitor-mode-on-boot">wlan1 Monitor Mode on Boot</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 style="text-align:center">A Guide To Building Your Own WarDriving/WiFi Assessment Raspberry Pi</h1>
+<div style="text-align:center"><img src="img1.webp"></div>
+<p>As penetration testers, we often have to travel onsite to perform various engagements. I recently was tasked with performing a wireless assessment for a client, but realized I did not want to walk around the client’s site with a laptop in hand, as that is just plain cumbersome. As such, I decided to put on my thinking hat, dust off some of the Raspberry Pi 3’s that I had laying around , and turn them into something useful that may just solve my immediate issue.</p>
+<p>This build revolves around being user-friendly and easy to configure. As such, not much Linux knowledge is required to get this done. For access to our Pi, I am using RaspAP which sets up a WiFi access point on the Pi so that we can easily connect to it on the fly. <strong>RaspAP</strong> also makes management of the interfaces easy as it comes with a nice web UI hosted on port 80. For capture of WiFi networks, handshakes, and other fun data, I use <strong>Kismet</strong>. While on a normal WiFi engagement I would probably lean towards using the Aircrack-ng suite purely, this device serves a different purpose. It is not meant to be a full on handheld WiFi pentesting rig (although it can be with the use of an SSH client from your phone); it is more of an initial recon and handshake capture device.</p>
+<p><em>Maybe in the future I will incorporate some easy to use active methods for assessing networks (deauth attacks, evil twins, etc.).</em></p>
+<p>Let’s start off with the bill of materials:</p>
+<ul>
+<li><strong>Raspberry Pi</strong> – this can be any Pi, I had two Pi 3’s not being used so that’s what I used</li>
+<li><strong>Micro SD card</strong> – if you are planning on doing large captures, the bigger the better. I used 64gb and 32gb for my builds. You may also need a micro SD to USB adapter if you do not have one or if your card did not come with the micro SD to regular SD adapter which you can then plug into any regular SD card reader.</li>
+<li><strong>WiFi adapter</strong> - one that supports monitor mode and packet injection – if you do not already have one, check out <a href="https://www.pandawireless.com/">https://www.pandawireless.com/</a>.</li>
+<li><strong>External battery bank</strong> – I personally used <a href="https://www.amazon.com/Anker-PowerCore-Ultra-Compact-High-Speed-Technology/dp/B0194WDVHI">Anker Powercore 10,000</a>.</li>
+<li><strong>USB-A to Micro USB cable</strong> to power your Pi from the power bank.</li>
+<li>OPTIONAL: <strong>USB GPS receiver</strong> – this is needed if you wish to also collect location data for each access point. Pretty much required if you’re planning on doing wardriving. Here’s one I used: <a href="https://www.amazon.com/Receiver-Antenna-Gmouse-Laptop-Navigation/dp/B073P3Y48Q">Amazon Link</a>.</li>
+</ul>
+<hr style="height: 2px">
+<h2 id="raspberry-pi-os-installation">Raspberry Pi OS Installation</h2>
+<p>While this may be self-explanatory for some, I am going to cover how to get the Raspberry Pi OS onto the SD card so that we can have a functioning Pi.</p>
+<p>First thing’s first, let’s download the Raspberry Pi Imager from the official source: <a href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/</a>. Select the one appropriate for your OS, download it, install it, and launch it. Once you have it up, plug in your micro SD card via whatever means you have to your laptop/desktop running the imager. The imager will ask for three things:</p>
+<ol>
+<li><strong>Raspberry Pi Device</strong> – this will be the Pi version that you own and wish to use for this project. In my case it will be “Raspberry Pi 3”.</li>
+<li><strong>Operating System</strong> – more than likely this will remain as “Raspberry Pi OS (64-bit)” unless you are using some old hardware.</li>
+<li><strong>Storage</strong> – if your system detects the SD card you plugged in, you will likely only have one option to select here, unless you have multiple external drives plugged into your system. Select the one that contains the SD card. In my case: “Mass Storage Device USB Device”.</li>
+</ol>
+<div style="text-align:center"><img src="img2.webp"></div>
+<p>Once you hit “Next”, a customization window will appear. Do not skip past this as we have some things to configure here. Hit “Edit Settings” and a new window will pop open. Then, in General tab configure:</p>
+<ul>
+<li><strong>Set Hostname</strong> – you can set this to anything you wish, “wardriver” in my case.</li>
+<li><strong>Set username and password</strong> – self-explanatory, these will be the credentials to access your Pi</li>
+<li><strong>Configure wireless LAN</strong> – configure this so that your Pi connects to your local WiFi network. This will be how we connect to it without the need for a montior, mouse, or keyboard. Select the appropriate country as well.</li>
+<li><strong>Set locale settings</strong> – configure this to best match your current location.</li>
+</ul>
+<p>Here’s what my configuration looks like:</p>
+<div style="text-align:center"><img src="img3.webp"></div>
+<p>Under the “Services” tab, simply <strong>enable</strong> the <strong>SSH service with password authentication</strong>. The rest of the settings can be left as default. Hit “Save” and proceed with the write process. Once the imager is done, it should eject your SD card from your system. At that point, feel free to remove it from the reader and insert it into your Raspberry Pi.</p>
+<hr style="height: 2px">
+<h2 id="installing-software">Installing Software</h2>
+<p>At this point, we need to power the Pi. Use your powerbank or plug it into an available power source. Once the Pi boots up, it should connect to your local WiFi network (granted you configured the SSID and password correctly during the previous step). To find out if it is up, we have a few options. Either run a tool like Nmap across your entire WiFi network and look for port 22 (SSH) open on a device. If you find several, just try them all, it won’t hurt. Alternatively, refer to your wireless router’s network configuration to locate the Pi’s DHCP lease. I use UniFi equipment at home, so finding the Pi is as easy as browsing to the WiFi clients page and copying its IP address. Ultimately, if you are really struggling, plug in a monitor, keyboard, and mouse, open up terminal on the Pi and run <strong>ifconfig</strong>.</p>
+<p>Once you get access to your Pi, update it first by running the following two commands to update packages:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt upgrade
+</span></span></code></pre></div><p>Now, let’s install Kismet. There are multiple ways of getting Kismet installed; however, some may be better than others. For instance, compiling Kismet from source on a Pi may not be a good idea as the Pi does not have sufficient resources to perform such RAM-heavy operations. Doing so may lock up your Pi forcing you to power cycle it. As such, the better route is to install it from packages made available by Kismet Wireless. To do so, we will need to add their repo to our Pi.</p>
+<p><em>As of 08/2024, the following instructions are still working, if you are doing this in 2-3 years from now, you may need to refer to Kismet’s documentation for current instructions (<a href="https://www.kismetwireless.net/packages/)">https://www.kismetwireless.net/packages/)</a>.</em></p>
+<p>Execute the following commands, in the order they are provided to install Kismet:</p>
+<pre tabindex="0"><code>wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg &gt; /dev/null
+echo &#39;deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/release/bookworm bookworm main&#39; | sudo tee /etc/apt/sources.list.d/kismet.list &gt; /dev/null
+sudo apt update
+sudo apt install kismet
+</code></pre><div style="text-align:center"><img src="img4.webp"></div>
+<p><em>Note: Your output may slightly vary from what is in the screenshot, but as long as you reach the prompt to install Kismet, you are golden.</em></p>
+<p><strong>OPTIONAL</strong>: If you are planning on using a GPS receiver with your setup, run the following commands to install the GPSd module:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install gpsd gpsd-clients
+</span></span></code></pre></div><div style="text-align:center"><img src="img5.webp"></div>
+<p>To confirm whether your GPS receiver is working appropriately:</p>
+<ul>
+<li>Plug the receiver into the Pi</li>
+<li>Run the <code>dmesg | grep tty</code> command and check the most recent entry to confirm what your receiver is represented as on your system. In my case, it was ttyACM0:</li>
+</ul>
+<div style="text-align:center"><img src="img6.webp"></div>
+<ul>
+<li>Then, run <code>gpsd /dev/&lt;tty_module&gt;</code> where <code>&lt;tty_module&gt;</code> is the name from the above command. In my case: <code>/dev/ttyACM0</code>. Once you execute this command, you will not see any output; however, to confirm that the receiver is now providing our GPSd daemon location data, we can run <code>gpsmon</code> and check if <code>LTP Pos:</code> values are showing a longitude and latitude value:</li>
+</ul>
+<div style="text-align:center"><img src="img7.webp"></div>
+<ul>
+<li>If all is well, configure GPSd to start automatically on boot by running <code>sudo systemctl enable gpsd</code>. You can validate that the command took effect by running <code>service gpsd status</code> and referencing the highlighted line in the below screenshot:</li>
+</ul>
+<div style="text-align:center"><img src="img8.webp"></div>
+<p>Next we’ll install the absolutely necessary <strong>Aircrack-ng</strong> suite. This will give us access to the airmon-ng utility for placing our WiFi card into monitor mode. Also, the suite comes with other tools that we can use through SSH for carrying out WiFi deauthentication attacks, and more. To install the suite, simply run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install aircrack-ng
+</span></span></code></pre></div><p>The last piece of the puzzle is to install <strong>RaspAP</strong> which will allow our Pi to programmatically create an access point for us to connect to upon boot. RaspAP comes with a nice web UI which is very user-friendly, and I’ll take easy over complicated any day! As of writing of this blog, the following command will install RaspAP on our Pi:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -sL https://install.raspap.com <span class="p">|</span> bash
+</span></span></code></pre></div><p>The installation script will ask you several questions, for most of which you can just accept the defaults by simply clicking the “enter” key when prompted. However, there were a few that I personally disabled as they were not required for my use case:</p>
+<div style="text-align:center"><img src="img9.webp"></div>
+<p>The RaspAP default configuration is as follows. Keep this handy as we will need it for initial access:</p>
+<div style="text-align:center"><img src="img10.webp"></div>
+<br>
+<div style="background-color: #F0C4B49C; padding: 5px; border-radius: 10px">
+  <p style="color: #000000">
+        <b style="color: #000000">IMPORTANT:</b> Before disconnecting from the Pi, we will want to ensure the Pi no longer connects to our pre-configured WiFi connection as we want to free up the wlan0 interface for RaspAP.
+        <b style="color: #000000">!!! Once you execute the following two commands, you will lose connectivity to your Pi !!!</b>
+        If you forgot something and need to get back on your Pi, you will have to plug in a monitor and keyboard.
+  </p>
+</div>
+<p>To prevent the Pi connecting to the WiFi which we have chosen when we installed Raspberry OS on the SD card, I recommend running the two following commands:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -rf /etc/wpa_supplicant/wpa_supplicant.conf
+</span></span><span class="line"><span class="cl">nmcli connection delete preconfigured
+</span></span></code></pre></div><p>Your terminal will likely hang at this point as we just killed the connection to our WiFi. To force a reboot, simply unplug the Pi from power and plug it back in.</p>
+<hr style="height: 2px">
+<h2 id="configuring-the-pi">Configuring The Pi</h2>
+<h3 id="raspap">RaspAP</h3>
+<p>You can plug your external WiFi adapter into the Pi now.</p>
+<p>Once the Pi boots back up, look for a <strong>raspi-webgui</strong> WiFi network being broadcasted.</p>
+<div style="text-align:center"><img src="img11.webp"></div>
+<p>Once it’s up, connect to it. The default password will be <strong>“ChangeMe“</strong>.</p>
+<p><em>Note: if you’re on Windows, you may see the connection manager showing a spinning circle, almost making it seems like it is struggling to connect. That’s simply because this connection does not offer an Internet connection. Simply ignore that and proceed.</em></p>
+<p>To access the RaspAP web UI, open up your browser and browse to <strong>http://10.3.141.1</strong>. When prompted for credentials, use <strong>“admin”</strong> for user and <strong>“secret”</strong> for password.</p>
+<div style="text-align:center"><img src="img12.webp"></div>
+<p>After authenticating to the portal, let’s reconfigure the hotspot hosted by the Pi to make it more se-kurr.</p>
+<p><em>Note: The following configuration settings are purely based on preference, you do not have to select the same values as me, but just make sure to remember them for the future.</em></p>
+<p>Click on the <strong>“Hotspot”</strong> menu option on the left side to open up the config page. Then, under the <strong>“Basic”</strong> tab, re-name the SSID, <strong>“wardriver2”</strong> in my case as this is my second wardriving Pi.</p>
+<div style="text-align:center"><img src="img13.webp"></div>
+<p>Click <strong>“Save settings”</strong> just for good measure. Under the <strong>“Security”</strong> tab, update the pre-shared key (PSK) for the network.</p>
+<div style="text-align:center"><img src="img14.webp"></div>
+<p><strong>OPTIONAL</strong>: Since I like to know things, especially when things start breaking and not working, under the <strong>“Logging”</strong> tab I recommend toggling the <strong>“Logfile output”</strong> setting.</p>
+<div style="text-align:center"><img src="img15.webp"></div>
+<p>Hit the <strong>“Save settings”</strong> button to solidify our hard work and make it law. No need to reboot anything just yet!</p>
+<p>Now, I very much dislike the IP addressing scheme provided by the RaspAP default config, so I change it to something easier to remember. To do so, go to the <strong>“DHCP Server”</strong> menu option on the left side. You can make this whatever you would like. I chose to go with IP address of <strong>172.16.0.1</strong> for the Pi, <strong>255.255.255.0</strong> subnet mask, and default gateway same as the IP of the Pi.</p>
+<div style="text-align:center"><img src="img16.webp"></div>
+<p>By scrolling down a bit, under the <strong>“DHCP options”</strong> section, I changed the <strong>“Starting IP Address”</strong> and <strong>“Ending IP Address”</strong> fields to match our new IP address scheme.</p>
+<div style="text-align:center"><img src="img17.webp"></div>
+<p>Hit <strong>“Save settings”</strong> and we are good to go with that.</p>
+<p>Lastly, let’s address the final piece of configuration: the login credentials. We can access the authentication settings by clicking on the <strong>“admin”</strong> with a person icon next to it, in the right upper corner of the app window. I changed my credentials to match those that I configured for access to the Pi, for simplicity sake.</p>
+<div style="text-align:center"><img src="img18.webp"></div>
+<p>Hit <strong>“Save settings“</strong>.</p>
+<p>Now let’s test our config to make sure it works as expected. To reboot the Pi, click on the <strong>“System”</strong> menu option on the left side, then hit the <strong>“Reboot”</strong> button.</p>
+<div style="text-align:center"><img src="img19.webp"></div>
+<p><em>Side Note: You can use the <strong>“WiFi client”</strong> menu to use the secondary WiFi interface for Internet connectivity for your Pi (in case you need to install other tools).</em></p>
+<p>Once the Pi reboots, it should now host a new AP based on the configurations we made. Connect to it and let’s configure Kismet next.</p>
+<h3 id="kismet">Kismet</h3>
+<p>After connecting to the Pi’s AP, we can SSH back into it by using the IP address we assigned it earlier. In my case, it was <strong>172.16.0.1</strong>.</p>
+<p><em>Note: When you do this, you may run into an SSH error about <strong>“remote host identification”</strong> changing. Simply run the command that the error provides to remove the old host key, then SSH in again:</em></p>
+<div style="text-align:center"><img src="img20.webp"></div>
+<p>After getting back onto the Pi via SSH, let’s create a centralized logging directory where Kismet will spit out all of our collected logs. I chose to simply create a <strong>“logs”</strong> directory on the Desktop. To do the same, run the following command (you may need to replace war with the name of the user you chose for logging into your Pi):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir /home/war/Desktop/logs
+</span></span></code></pre></div><p>To tell Kismet to save its logs to this newly created directory, we will have to edit the <strong>/etc/kismet/kismet_logging.conf</strong> file as root as the file resides within the protected <strong>/etc</strong> directory. You can use any text editor you want. If you’re unfamiliar, simply run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/kismet/kismet_logging.conf
+</span></span></code></pre></div><p>Within this configuration file, we want to edit the <strong>log_prefix</strong> value. It is pretty close to the top of the file, on line 31 in my case. Change it to the path of the logging folder we created earlier, <strong>/home/war/Desktop/logs/</strong> in my case. It should look like this:kismet_logging file</p>
+<div style="text-align:center"><img src="img21.webp"></div>
+<p>To save the file in <strong>nano</strong>, press <strong>“CTRL + O”</strong> then hit <strong>“enter”</strong> key. This will write the changes to the file. To quit <strong>nano</strong>, press <strong>“CTRL + X”</strong>.</p>
+<p>Next we will configure the Kismet service to start on boot. We can achieve this by simply running:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/kismet/kismet_logging.conf
+</span></span></code></pre></div><p><strong>OPTIONAL</strong>: If you are going to be using the GPS receiver with Kismet through GPSd, then you will have to make one more modification to Kismet’s config. We need to configure Kismet to communicate with GPSd to pull coordinates. To do so, let’s edit the <strong>/etc/kismet/kismet.conf</strong> file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/kismet/kismet.conf
+</span></span></code></pre></div><p>Under the GPS configuration section, on line 194, there is a commented-out line for GPSd configuration. Simply remove the preceding <strong>#</strong> to apply the configuration. Should look as such:</p>
+<div style="text-align:center"><img src="img22.webp"></div>
+<p>To save the file in <strong>nano</strong>, press <strong>“CTRL + O”</strong> then hit <strong>“enter”</strong> key. This will write the changes to the file. To quit <strong>nano</strong>, press <strong>“CTRL + X”</strong>.</p>
+<p>At this point, we are nearly done!! The last required modification is to add a way for our Pi to place the external WiFi card in monitor mode on boot.</p>
+<h3 id="wlan1-monitor-mode-on-boot">wlan1 Monitor Mode on Boot</h3>
+<p>Since placing the <strong>wlan1</strong> interface in monitor mode requires us to run commands (and we do not want to do that since we want this device to be pretty plug-and-play), we will have to implement a Bash script to handle this logic for us on each boot cycle. Lucky for you, I have already prepared a script specifically for this purpose: <a href="https://github.com/e-nzym3/wlan1mon-on-boot">https://github.com/e-nzym3/wlan1mon-on-boot</a></p>
+<p>If you have SSH still up and running, you can simply browse to <a href="https://raw.githubusercontent.com/e-nzym3/wlan1mon-on-boot/main/wlan1mon-on-boot.sh">https://raw.githubusercontent.com/e-nzym3/wlan1mon-on-boot/main/wlan1mon-on-boot.sh</a>, copy the contents, and paste it into a new file called wlan1mon-on-boot.sh within /root/ directory. <strong>You will need to perform this action as root.</strong></p>
+<p>Here’s how to do it, in case you are new to Linux. Run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /root/wlan1mon-on-boot.sh
+</span></span></code></pre></div><p>Paste the contents from the above link, <strong>“SHIFT + CTRL + V”</strong> is the shortcut.</p>
+<div style="background-color:#F0C4B49C">
+    <p style="color: #7C572BF"><b style="color: #000000">IMPORTANT</b>: If your local Pi user is not <b style="color: #000000">war</b> (as it is in my case), you will need to modify the script slightly as it uses a logging function to give us visibility in case things break and wlan1mon is not created. I highlighted in the screenshot below the line where you need to change war to whatever your username is.</p>
+</div>
+<div style="text-align:center"><img src="img23.webp"></div>
+<p>Then, just like before, press <strong>“CTRL + O”</strong> and then <strong>“enter”</strong> key to save. <strong>“CTRL + X”</strong> to exit. Before we move on, let’s make the file executable:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chmod +x /root/wlan1mon-on-boot.sh
+</span></span></code></pre></div><p>To have the script execute on each boot cycle, we will add an entry to <strong>root</strong> user’s crontab. Cron is simply a task scheduler for Linux. To edit root’s crontab, run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo crontab -e
+</span></span></code></pre></div><p><em>Note: you may be prompted to select an editor for crontab. Select <strong>nano</strong> for simplicity sake.</em></p>
+<p>Within the crontab file, at the very bottom of it, add the following line:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">@reboot /root/wlan1mon-on-boot.sh
+</span></span></code></pre></div><p>To save the file in <strong>nano</strong>, press <strong>“CTRL + O”</strong> then hit <strong>“enter”</strong> key. This will write the changes to the file. To quit nano, press <strong>“CTRL + X”</strong>.</p>
+<p>Reboot the Pi with <code>sudo reboot now</code>.</p>
+<p>After the Pi reboots, connect back to its WiFi network. Now, try accessing the Kismet web UI through <strong>http://172.16.0.1:2501</strong>. The IP address will obviously differ if you applied different configuration during the RaspAP step. However, if you followed the guide verbatim, you should be welcomed by a Kismet interface and a prompt to create a new login. As before, I used the same credentials as for RaspAP and for logging into the Pi.</p>
+<div style="text-align:center"><img src="img24.webp"></div>
+<p>Once the portal loads, and if you are using the GPS receiver, you should be able to see the coordinates being displayed in the right upper corner of the app. The green crosshair icon confirms that a GPS lock is acquired:</p>
+<div style="text-align:center"><img src="img25.webp"></div>
+<p>To validate whether our monitor mode script executed successfully, we can proceed to the <strong>“Data Sources”</strong> menu which is accessible by clicking the hamburger icon in the left upper corner of the app, right next to the <strong>“Kismet”</strong> logo.</p>
+<div style="text-align:center"><img src="img26.webp"></div>
+<br>
+<div style="background-color: #C2F0B49C; padding: 5px; border-radius: 10px">
+  <p style="color: #000000">
+        If the script worked, you should see wlan1mon as an available interface. If you do, click on it and select <b style="color: #000000">“Enable source”</b> to start collecting WiFi data!
+    </p>
+</div>
+<br>
+<div style="background-color: #F0C4B49C; padding: 5px; border-radius: 10px">
+  <p style="color: #000000">
+        If wlan1mon is not listed. You can hop back onto the Pi and check the log file under <b style="color: #000000">/home/war/Desktop/wlan1_iface.log</b>. There should be output from <b style="color: #000000">airmon-ng</b> showing the <b style="color: #000000">wlan1</b> interface being enabled with monitor mode. If not, try running <b style="color: #000000">sudo airmon-ng start wlan1</b> manually to make sure the command actually works. I’ve found that I skipped the Aircrack-ng suite installation step in the past, which breaks the script as <b style="color: #000000">airmon-ng</b> will not be an available command.
+    </p>
+</div>
+<br>
+<hr style="height: 2px">
+<p><strong>Congrats!</strong></p>
+<p>Now go out there and wardrive, or assess wireless networks. Kismet will save its logs to the logging directory we configured. So after each capture session, pull down the <strong>.kismet</strong> file from there and process it as needed. Maybe in the future I will write a short blog on what you can do with the file.</p>
+<p>In the meantime, I would recommend checking out Hak5’s video on wardriving which covers some of the config we performed here as well: <a href="https://youtu.be/Z6h0vtqHxlQ?si=MuFAxVKX0Fo0YcbM">https://youtu.be/Z6h0vtqHxlQ?si=MuFAxVKX0Fo0YcbM</a>. There are plenty of other videos and resources that talk about it too, including Kismet documentation: <a href="https://www.kismetwireless.net/docs/readme/kismetdb/kismetdb_to_pcap/">https://www.kismetwireless.net/docs/readme/kismetdb/kismetdb_to_pcap/</a>.</p>
+<p><strong>Thanks for stopping by and hacking with me! See you on the next one!</strong></p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/e-nzym3" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://x.com/pyteljack" target="_blank" rel="noopener noreferrer me"
+    title="X">
+    <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/jack-pytel/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Jack Pytel.
+        Everything contained on this blog is purely for educational purposes only!
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
