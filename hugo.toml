@@ -74,7 +74,7 @@ theme = "hugo-blog-awesome"
     weight = 30
 
 [Languages.en-gb.params]
-  sitename = "E-NZYM3 BLOG"
+  sitename = "E-nzym3"
   defaultColor = "dark" # set color mode: dark, light, auto
   # Setting it to 'auto' applies the color scheme based on the visitor's device color preference.If you don't specify anything, ignore this parameter, or leave it blank,
   # the default value is set to 'auto'.
@@ -97,12 +97,13 @@ theme = "hugo-blog-awesome"
   # By default (or if nothing is specified), summary is used.
 
 [Languages.en-gb.params.author]
-  avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  avatar = "avatar.png" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
-  intro = "Awesome hugo blog"
-  name = "Sidharth R"
-  description = "A fast, minimalistic Hugo theme with light and dark mode support, for running a personal site or blog."
-
+  banner = "banner.png"
+  intro = "E-nzym3"
+  name = "Jack Pytel"
+  description1 = "Curious Mind"
+  description2 = "Cyber Security Professional"
 # Allow to override webmanifest options
 [Languages.en-gb.params.webmanifest]
   name = "sitename" # will use "params.sitename" or "title" by default
@@ -118,13 +119,13 @@ theme = "hugo-blog-awesome"
 
 [[params.socialIcons]]
 name = "github"
-url = "https://github.com/hugo-sid"
+url = "https://github.com/e-nzym3"
 
 [[params.socialIcons]]
-name = "twitter"
-url = "https://twitter.com"
+name = "x"
+url = "https://x.com/pyteljack"
 
 [[params.socialIcons]]
-name = "Rss"
-url = "/index.xml"
+name = "linkedin"
+url = "https://www.linkedin.com/in/jack-pytel/"
 
