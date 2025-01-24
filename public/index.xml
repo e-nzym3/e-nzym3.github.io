@@ -6,7 +6,18 @@
     <description>Recent content in Home on E-NZYM3 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 01 Aug 2024 13:08:25 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Aug 2024 09:05:38 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing: Mitty</title>
+      <link>http://localhost:1313/posts/mitty_intro-2024/</link>
+      <pubDate>Wed, 14 Aug 2024 09:05:38 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/mitty_intro-2024/</guid>
+      
+      <description>A Github Commit Bruteforce Tool used to find deleted or dereferenced commits! --&gt; Get Mitty Here &lt;-- The recent Defcon 2024 conference in Las Vegas hosted a Cloud Capture-The-Flag (CTF) event in which I participated with several of my work colleagues. I took on a couple of Git-related challenges as I never really interacted with Git from a CTF perspective but figured this would be a great way to learn more about Git and Github.</description>
+      
+    </item>
+    
     <item>
       <title>WarDriver Pi - Build Guide</title>
       <link>http://localhost:1313/posts/wardriver-pi_2024/</link>
