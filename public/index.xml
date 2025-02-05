@@ -6,7 +6,18 @@
     <description>Recent content in Home on E-NZYM3 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 14 Aug 2024 09:05:38 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Aug 2024 11:33:52 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GOAD - Game of Active Directory - Walkthrough</title>
+      <link>http://localhost:1313/posts/goad_walkthrough/</link>
+      <pubDate>Wed, 21 Aug 2024 11:33:52 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/goad_walkthrough/</guid>
+      
+      <description>Using Ludus and GOAD To Create Active Directory Firing Range As a penetration tester, it is crucial to have a stable, easily deployable, and accessible lab in which you can test various attack methods, exploits, and more. I have, in the past, built home labs from scratch using VMWare and a bunch of VMs running simultaneously on an old laptop. While that works pretty well when you are starting out, it can quickly get convoluted and annoying to manage.</description>
+      
+    </item>
+    
     <item>
       <title>Introducing: Mitty</title>
       <link>http://localhost:1313/posts/mitty_intro-2024/</link>
